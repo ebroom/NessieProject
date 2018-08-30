@@ -4,8 +4,8 @@
         xmlns:bind="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-                name="item"
-                type="org.hacking.nessieproj.CustomerAccountsViewModel"/>
+                name="customerAccount"
+                type="org.hacking.nessieproj.CustomerAccount"/>
     </data>
 
     <LinearLayout
@@ -17,27 +17,27 @@
                 android:id="@+id/type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{item.type}"/>
+                android:text="@{customerAccount.type}"/>
         <TextView
                 android:id="@+id/nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{item.nickname}"/>
+                android:text="@{customerAccount.nickname}"/>
         <TextView
                 android:id="@+id/rewards"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{item.rewards}"/>
+                android:text="@{customerAccount.rewards}"/>
         <TextView
                 android:id="@+id/balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{item.balance}"/>
+                android:text="@{customerAccount.balance}"/>
         <TextView
                 android:id="@+id/accountNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{item.accountNumber}"/>
+                android:text="@{customerAccount.accountNumber}"/>
 
 
     </LinearLayout>

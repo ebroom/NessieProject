@@ -15,10 +15,10 @@ class CustomerAccount(accountId: String?, type: String?, nickname: String?, rewa
     var nickname: String? = nickname
 
     @SerializedName("rewards")
-    var rewards: Int? = rewards
+    var rewards: String? = rewards.toString()
 
     @SerializedName("balance")
-    var balance: Int? = balance
+    var balance: String? = balance.toString()
 
     @SerializedName("account_number")
     var accountNumber: String? = accountNumber
