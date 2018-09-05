@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="account"
+                type="org.hacking.nessieproj.Account"/>
+        <variable
+                name="converter"
+                type="org.hacking.nessieproj.Converter"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <EditText
+                android:id="@+id/edit_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Credit Card"
+                android:text="@={account.type}"/>
+        <EditText
+                android:id="@+id/edit_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Account Nickname"
+                android:text="@={account.nickname}"/>
+        <EditText
+                android:id="@+id/edit_rewards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Account Rewards"
+                android:inputType="number"
+                android:text="@={converter.toString(account.rewards)}"/>
+        <EditText
+                android:id="@+id/edit_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Account Balance"
+                android:inputType="number"
+                android:text="@={converter.toString(account.balance)}"/>
+        <EditText
+                android:id="@+id/edit_accountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Account Number"
+                android:inputType="number"
+                android:text="@={account.accountNumber}"/>
+
+
+    </LinearLayout>
+</layout>
