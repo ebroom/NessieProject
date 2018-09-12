@@ -7,9 +7,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import org.hacking.nessieproj.databinding.CustomerAccountBinding
+import org.hacking.nessieproj.models.CustomerAccount
 
 @SuppressLint("IncorrectAdapter")
-class CustomAdapter(private val context: Context, private val dataList: List<CustomerAccount>) : RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
+class CustomerAccountAdapter(private val context: Context, private val dataList: List<CustomerAccount>) : RecyclerView.Adapter<CustomerAccountAdapter.CustomViewHolder>() {
 
     class CustomViewHolder(val binding: CustomerAccountBinding) : RecyclerView.ViewHolder(binding.root)
 

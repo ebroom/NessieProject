@@ -2,6 +2,10 @@ package org.hacking.nessieproj
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import org.hacking.nessieproj.models.APIResponse
+import org.hacking.nessieproj.models.Bill
+import org.hacking.nessieproj.models.CustomerAccount
+import org.hacking.nessieproj.models.ObservableAccount
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -12,8 +16,10 @@ class CustomerViewModel : ViewModel() {
     private val service = RetrofitClientInstance.retrofitInstance.create(GetDataService::class.java)
 
     val customerAccounts: MutableLiveData<List<CustomerAccount>> = MutableLiveData()
+    val customerBills: MutableLiveData<Bill> = MutableLiveData()
     val loadingIndicator: MutableLiveData<Boolean> = MutableLiveData()
-    val apiSuccess: MutableLiveData<Boolean> = MutableLiveData()
+    val apiResponse: MutableLiveData<Int> = MutableLiveData()
+    val postAccount = MutableLiveData<ObservableAccount>()
 
     fun getCustomerAccounts() {
         val call = service.getCustomerAccounts(RetrofitClientInstance.CUSTOMER_ID, RetrofitClientInstance.API_KEY)
@@ -24,42 +30,67 @@ class CustomerViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<List<CustomerAccount>>, t: Throwable) {
-                loadingIndicator.value = false
-                apiSuccess.value = false
+                updateValuesForApiFailure()
             }
         })
     }
 
-    fun postCustomerAccounts(account: Account?) {
+    fun postCustomerAccounts(account: ObservableAccount?) {
         val call = service.postCustomerAccounts(RetrofitClientInstance.CUSTOMER_ID, account!!, RetrofitClientInstance.API_KEY)
 
         call.enqueue(object : Callback<APIResponse> {
             override fun onResponse(call: Call<APIResponse>, response: Response<APIResponse>) {
-                loadingIndicator.value = false
+                updateValuesForApiResponse(response)
             }
 
             override fun onFailure(call: Call<APIResponse>, t: Throwable) {
-                loadingIndicator.value = false
-                apiSuccess.value = false
+                updateValuesForApiFailure()
             }
         })
     }
 
     fun deleteCustomerAccounts() {
-//        val progressDialog = ProgressDialog(activity)
-//        progressDialog.setMessage("Loading....")
-//        progressDialog.show()
-
         val call = service.deleteCustomerAccounts("Accounts", RetrofitClientInstance.API_KEY)
         call.enqueue(object : Callback<APIResponse> {
             override fun onResponse(call: Call<APIResponse>, response: Response<APIResponse>) {
-//                progressDialog.dismiss()
+                updateValuesForApiResponse(response)
             }
 
             override fun onFailure(call: Call<APIResponse>, t: Throwable) {
-//                progressDialog.dismiss()
-//                Toast.makeText(activity, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show()
+                updateValuesForApiFailure()
             }
         })
+    }
+
+    fun getCustomerBills() {
+        val call = service.getCustomerBills(RetrofitClientInstance.CUSTOMER_ID, RetrofitClientInstance.API_KEY)
+        call.enqueue(object : Callback<List<Bill>> {
+            override fun onResponse(call: Call<List<Bill>>?, response: Response<List<Bill>>) {
+                if (response.body()!!.isEmpty()) {
+                    customerBills.value = null
+                } else {
+                    customerBills.value = response.body()!![0]
+                }
+                loadingIndicator.value = false
+            }
+
+            override fun onFailure(call: Call<List<Bill>>?, t: Throwable?) {
+                updateValuesForApiFailure()
+            }
+        })
+    }
+
+//    fun getCustomerInfo() {
+//        val call = service.getCustomerInfo()
+//    }
+
+    private fun updateValuesForApiResponse(response : Response<APIResponse>) {
+        apiResponse.value = Character.getNumericValue(response.code().toString()[0])
+        loadingIndicator.value = false
+    }
+
+    private fun updateValuesForApiFailure() {
+        loadingIndicator.value = false
+        apiResponse.value = -1
     }
 }

@@ -5,7 +5,7 @@
     <data>
         <variable
                 name="customerAccount"
-                type="org.hacking.nessieproj.CustomerAccount"/>
+                type="org.hacking.nessieproj.models.CustomerAccount"/>
     </data>
 
     <LinearLayout
@@ -39,7 +39,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{customerAccount.accountNumber}"/>
-
 
     </LinearLayout>
 </layout>

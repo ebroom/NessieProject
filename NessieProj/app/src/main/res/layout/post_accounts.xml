@@ -5,7 +5,7 @@
     <data>
         <variable
                 name="account"
-                type="org.hacking.nessieproj.Account"/>
+                type="org.hacking.nessieproj.models.ObservableAccount"/>
         <variable
                 name="converter"
                 type="org.hacking.nessieproj.Converter"/>
@@ -51,7 +51,11 @@
                 android:hint="Account Number"
                 android:inputType="number"
                 android:text="@={account.accountNumber}"/>
-
+        <Button
+                android:id="@+id/addAccountButton"
+                android:layout_width="wrap_content"
+                android:text="Add Account"
+                android:layout_height="wrap_content"/>
 
     </LinearLayout>
 </layout>
