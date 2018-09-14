@@ -69,10 +69,10 @@ class CustomerAccountButtonsFragment : Fragment() {
     private fun setObservers() {
         viewmodel.customerAccounts.observe(this, Observer {
             if (it!!.isEmpty()) {
+                noAccountsTextView.text = "No Accounts Found"
                 if (customer_account_layout.indexOfChild(noAccountsTextView) == -1) {
-                    noAccountsTextView.text = "No Accounts Found"
                     noAccountsTextView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-                    customer_account_layout.addView(noAccountsTextView, 2)
+                    customer_account_layout.addView(noAccountsTextView)
                 }
             } else {
                 if (customer_account_layout.indexOfChild(noAccountsTextView) != -1) {
@@ -85,11 +85,16 @@ class CustomerAccountButtonsFragment : Fragment() {
         viewmodel.customerBills.observe(this, Observer {
             it?.let {
                 val layoutInflater = LayoutInflater.from(context)
-                val binding : CustomerBillBinding = DataBindingUtil.inflate(layoutInflater, R.layout.customer_bill, viewGroup, true)
+                val binding : CustomerBillBinding = DataBindingUtil.inflate(layoutInflater, R.layout.customer_bill, viewGroup, false)
+                binding.bill = viewmodel.customerBills.value
+                val billView = binding.root
+                customer_account_layout.addView(billView)
             } ?: run {
                 noAccountsTextView.text = "No Bills Found"
-                noAccountsTextView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-                customer_account_layout.addView(noAccountsTextView)
+                if (customer_account_layout.indexOfChild(noAccountsTextView) == -1) {
+                    noAccountsTextView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                    customer_account_layout.addView(noAccountsTextView)
+                }
             }
         })
 

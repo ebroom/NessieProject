@@ -1,18 +1,33 @@
 package org.hacking.nessieproj.models
 
+import android.databinding.BaseObservable
+import android.databinding.Bindable
 import com.google.gson.annotations.SerializedName
+import org.hacking.nessieproj.BR
 
-data class Customer(
-        private val _firstName : String,
-        private val _lastName : String,
-        private val _address : Address
-) {
+class Customer : BaseObservable() {
+
     @SerializedName("first_name")
-    val firstName = _firstName
+    var firstName = "First"
+        @Bindable get
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.firstName)
+        }
 
     @SerializedName("last_name")
-    val lastName = _lastName
+    var lastName = "Last"
+        @Bindable get
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.lastName)
+        }
 
     @SerializedName("address")
-    val address = _address
+    var address = Address()
+        @Bindable get
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.address)
+        }
 }

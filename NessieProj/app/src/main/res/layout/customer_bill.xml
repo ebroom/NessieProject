@@ -10,35 +10,35 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{bill.status}"/>
+                android:text="@{String.format(@string/customer_bill_status_format, bill.status)}"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{bill.payee}"/>
+                android:text="@{String.format(@string/customer_bill_payee_format, bill.payee)}"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{bill.nickname}"/>
+                android:text="@{String.format(@string/customer_bill_nickname_format, bill.nickname)}"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{bill.creation_date}"/>
+                android:text="@{String.format(@string/customer_bill_creation_date_format, bill.creationDate)}"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{bill.payment_date}"/>
+                android:text="@{String.format(@string/customer_bill_payment_date_format, bill.paymentDate)}"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{bill.payment_amount}"/>
+                android:text="@{String.format(@string/customer_bill_payment_amount_format, bill.paymentAmount)}"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{bill.recurring_date}"/>
+                android:text="@{String.format(@string/customer_bill_recurring_date_format, bill.recurringDate)}"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{bill.upcoming_payment_date}"/>
+                android:text="@{String.format(@string/customer_bill_upcoming_payment_date_format, bill.upcomingPaymentDate)}"/>
 
     </LinearLayout>
 </layout>

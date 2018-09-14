@@ -6,11 +6,11 @@ data class Bill(
         private val _status : String,
         private val _payee : String,
         private val _nickname : String,
-        private val _creation_date : String,
-        private val _payment_date : String,
-        private val _payment_amount : Int,
-        private val _recurring_date : Int,
-        private val _upcoming_payment_date : String
+        private val _creationDate : String,
+        private val _paymentDate : String,
+        private val _paymentAmount : Double,
+        private val _recurringDate : Int,
+        private val _upcomingPaymentDate : String
 ) {
     @SerializedName("status")
     val status = _status
@@ -22,17 +22,17 @@ data class Bill(
     val nickname = _nickname
 
     @SerializedName("creation_date")
-    val creation_date = _creation_date
+    val creationDate = _creationDate
 
     @SerializedName("payment_date")
-    val payment_date = _payment_date
+    val paymentDate = _paymentDate
 
     @SerializedName("payment_amount")
-    val payment_amount = _payment_amount.toString()
+    val paymentAmount = _paymentAmount.toString()
 
     @SerializedName("recurring_date")
-    val recurring_date = _recurring_date.toString()
+    val recurringDate = _recurringDate.toString()
 
     @SerializedName("upcoming_payment_date")
-    val upcoming_payment_date = _upcoming_payment_date
+    val upcomingPaymentDate = _upcomingPaymentDate
 }

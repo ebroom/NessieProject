@@ -1,27 +1,49 @@
 package org.hacking.nessieproj.models
 
+import android.databinding.BaseObservable
+import android.databinding.Bindable
 import com.google.gson.annotations.SerializedName
+import org.hacking.nessieproj.BR
 
-data class Address(
-        private val _streetNumber : String,
-        private val _streetName : String,
-        private val _city : String,
-        private val _state : String,
-        private val _zip : String
+class Address : BaseObservable() {
 
-) {
     @SerializedName("street_number")
-    val streetNumber = _streetNumber
+    var streetNumber = "1234"
+        @Bindable get
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.streetNumber)
+        }
 
     @SerializedName("street_name")
-    val streetName = _streetName
+    var streetName = "Street"
+        @Bindable get
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.streetName)
+        }
 
     @SerializedName("city")
-    val city = _city
+    var city = "Nowhere"
+        @Bindable get
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.city)
+        }
 
     @SerializedName("state")
-    val state = _state
+    var state = "XX"
+        @Bindable get
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.state)
+        }
 
     @SerializedName("zip")
-    val zip = _zip
+    var zip = "12345"
+        @Bindable get
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.zip)
+        }
 }

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">NessieProj</string>
+    <string name="customer_bill_status_format">Status: %1$s</string>
+    <string name="customer_bill_payee_format">Payee: %1$s</string>
+    <string name="customer_bill_payment_date_format">Payment Date: %1$s</string>
+    <string name="customer_bill_nickname_format">Nickname: %1$s</string>
+    <string name="customer_bill_creation_date_format">Creation Date: %1$s</string>
+    <string name="customer_bill_payment_amount_format">Payment Amount: %1$s</string>
+    <string name="customer_bill_recurring_date_format">Recurring Date: %1$s</string>
+    <string name="customer_bill_upcoming_payment_date_format">Upcoming Payment Date: %1$s</string>
 </resources>
