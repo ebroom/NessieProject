@@ -2,10 +2,7 @@ package org.hacking.nessieproj
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import org.hacking.nessieproj.models.APIResponse
-import org.hacking.nessieproj.models.Bill
-import org.hacking.nessieproj.models.CustomerAccount
-import org.hacking.nessieproj.models.ObservableAccount
+import org.hacking.nessieproj.models.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -75,6 +72,19 @@ class CustomerViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<List<Bill>>?, t: Throwable?) {
+                updateValuesForApiFailure()
+            }
+        })
+    }
+
+    fun orderPizza(accountId: String, purchase: Purchase) {
+        val call = service.orderPizza(accountId,RetrofitClientInstance.API_KEY, purchase)
+        call.enqueue(object : Callback<APIResponse> {
+            override fun onResponse(call: Call<APIResponse>?, response: Response<APIResponse>) {
+                updateValuesForApiResponse(response)
+            }
+
+            override fun onFailure(call: Call<APIResponse>?, t: Throwable?) {
                 updateValuesForApiFailure()
             }
         })

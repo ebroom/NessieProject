@@ -2,7 +2,7 @@ package org.hacking.nessieproj.models
 
 import com.google.gson.annotations.SerializedName
 
-class ATM {
+class Atm {
 
     @SerializedName("name")
     var name : String? = null

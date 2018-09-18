@@ -13,7 +13,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingBottom="16dp">
-
+        <TextView
+                android:id="@+id/account_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{customerAccount.accountId}"
+                android:visibility="gone"/>
         <TextView
                 android:id="@+id/type"
                 android:layout_width="wrap_content"
@@ -39,6 +44,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{customerAccount.accountNumber}"/>
+        <Button
+                android:id="@+id/pizza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order pizza from this account!"/>
 
     </LinearLayout>
 </layout>

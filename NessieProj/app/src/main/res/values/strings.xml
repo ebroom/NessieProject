@@ -8,4 +8,7 @@
     <string name="customer_bill_payment_amount_format">Payment Amount: %1$s</string>
     <string name="customer_bill_recurring_date_format">Recurring Date: %1$s</string>
     <string name="customer_bill_upcoming_payment_date_format">Upcoming Payment Date: %1$s</string>
+    <string name="atm_address_format_street">%1$s %2$s</string>
+    <string name="atm_address_format_city">%1$s, %2$s %3$s</string>
+    <string name="atm_money">$%1$s</string>
 </resources>

@@ -33,5 +33,13 @@ interface GetDataService {
                 @Query("lng") lng: Double,
                 @Query("rad") radius: Int = 1,
                 @Query("page") page: Int = 0,
-                @Query("key") key: String)
+                @Query("key") key: String): Call<AtmList>
+
+    @GET
+    fun getNextPage(@Url url : String): Call<AtmList>
+
+    @POST("/accounts/{id}/purchases")
+    fun orderPizza(@Path("id") accountId: String,
+                   @Query("key") key: String,
+                   @Body purchase: Purchase): Call<APIResponse>
 }

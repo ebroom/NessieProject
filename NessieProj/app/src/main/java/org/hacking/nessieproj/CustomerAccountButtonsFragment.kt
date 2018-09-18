@@ -123,7 +123,7 @@ class CustomerAccountButtonsFragment : Fragment() {
 
     /*Method to generate List of data using RecyclerView with custom adapter*/
     fun generateDataList(accountList: List<CustomerAccount>) {
-        val adapter = CustomerAccountAdapter(activity, accountList)
+        val adapter = CustomerAccountAdapter(activity, accountList, viewmodel)
         val layoutManager = LinearLayoutManager(activity)
         recycler_view.layoutManager = layoutManager
         recycler_view.adapter = adapter

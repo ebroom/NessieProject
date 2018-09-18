@@ -8,13 +8,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Latitude"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal|numberSigned"/>
     <EditText
             android:id="@+id/lng"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Longitude"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal|numberSigned"/>
     <EditText
             android:id="@+id/radius"
             android:layout_width="match_parent"
@@ -29,6 +29,8 @@
     <android.support.v7.widget.RecyclerView
             android:id="@+id/atm_recycler_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
