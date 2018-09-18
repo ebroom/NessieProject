@@ -1,4 +1,4 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.CustomerAccount
 
 import android.app.ProgressDialog
 import android.arch.lifecycle.Observer
@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.post_accounts.*
+import org.hacking.nessieproj.R
 import org.hacking.nessieproj.databinding.PostAccountsBinding
 import org.hacking.nessieproj.models.ObservableAccount
 

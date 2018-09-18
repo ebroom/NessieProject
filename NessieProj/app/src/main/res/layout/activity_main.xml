@@ -23,4 +23,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="ATMs"/>
+    <Button
+            android:id="@+id/all_the_pizza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Find Pizza Merchants"/>
 </LinearLayout>

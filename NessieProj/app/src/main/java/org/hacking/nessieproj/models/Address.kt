@@ -8,7 +8,7 @@ import org.hacking.nessieproj.BR
 class Address : BaseObservable() {
 
     @SerializedName("street_number")
-    var streetNumber = "1234"
+    var streetNumber = "Unknown Street Address"
         @Bindable get
         set(value) {
             field = value
@@ -16,7 +16,7 @@ class Address : BaseObservable() {
         }
 
     @SerializedName("street_name")
-    var streetName = "Street"
+    var streetName = ""
         @Bindable get
         set(value) {
             field = value
@@ -24,7 +24,7 @@ class Address : BaseObservable() {
         }
 
     @SerializedName("city")
-    var city = "Nowhere"
+    var city = ""
         @Bindable get
         set(value) {
             field = value
@@ -32,7 +32,7 @@ class Address : BaseObservable() {
         }
 
     @SerializedName("state")
-    var state = "XX"
+    var state = ""
         @Bindable get
         set(value) {
             field = value
@@ -40,7 +40,7 @@ class Address : BaseObservable() {
         }
 
     @SerializedName("zip")
-    var zip = "12345"
+    var zip = ""
         @Bindable get
         set(value) {
             field = value

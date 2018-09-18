@@ -1,7 +1,9 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.CustomerAccount
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import org.hacking.nessieproj.Api.GetDataService
+import org.hacking.nessieproj.Api.RetrofitClientInstance
 import org.hacking.nessieproj.models.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -16,6 +18,7 @@ class CustomerViewModel : ViewModel() {
     val customerBills: MutableLiveData<Bill> = MutableLiveData()
     val loadingIndicator: MutableLiveData<Boolean> = MutableLiveData()
     val apiResponse: MutableLiveData<Int> = MutableLiveData()
+    val wasDeposited: MutableLiveData<Boolean> = MutableLiveData()
     val postAccount = MutableLiveData<ObservableAccount>()
 
     fun getCustomerAccounts() {
@@ -78,7 +81,7 @@ class CustomerViewModel : ViewModel() {
     }
 
     fun orderPizza(accountId: String, purchase: Purchase) {
-        val call = service.orderPizza(accountId,RetrofitClientInstance.API_KEY, purchase)
+        val call = service.orderPizza(accountId, RetrofitClientInstance.API_KEY, purchase)
         call.enqueue(object : Callback<APIResponse> {
             override fun onResponse(call: Call<APIResponse>?, response: Response<APIResponse>) {
                 updateValuesForApiResponse(response)
@@ -90,9 +93,20 @@ class CustomerViewModel : ViewModel() {
         })
     }
 
-//    fun getCustomerInfo() {
-//        val call = service.getCustomerInfo()
-//    }
+    fun deposit(accountId: String, deposit: Deposit) {
+        val call = service.deposit(accountId, RetrofitClientInstance.API_KEY, deposit)
+        call.enqueue(object : Callback<APIResponse> {
+            override fun onResponse(call: Call<APIResponse>?, response: Response<APIResponse>) {
+                updateValuesForApiResponse(response)
+                wasDeposited.value = apiResponse.value == 2
+            }
+
+            override fun onFailure(call: Call<APIResponse>?, t: Throwable?) {
+                updateValuesForApiFailure()
+                wasDeposited.value = false
+            }
+        })
+    }
 
     private fun updateValuesForApiResponse(response : Response<APIResponse>) {
         apiResponse.value = Character.getNumericValue(response.code().toString()[0])

@@ -2,14 +2,20 @@ package org.hacking.nessieproj
 
 import android.databinding.InverseMethod
 
-class Converter{
 
-    @InverseMethod("toInt")
-    fun toString(value: Int): String {
-        return "" + value
+object Converter{
+
+    fun convertStringToInt(value: String): Int {
+        return try {
+            Integer.parseInt(value)
+        } catch (e: NumberFormatException) {
+            -1
+        }
+
     }
 
-    fun toInt(value: String): Int {
-        return Integer.parseInt(value)
+    @InverseMethod("convertStringToInt")
+    fun convertIntToString(value: Int): String {
+        return value.toString()
     }
 }

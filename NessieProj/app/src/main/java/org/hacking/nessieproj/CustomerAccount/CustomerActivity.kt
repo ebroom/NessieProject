@@ -1,7 +1,8 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.CustomerAccount
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import org.hacking.nessieproj.R
 
 class CustomerActivity : AppCompatActivity() {
 

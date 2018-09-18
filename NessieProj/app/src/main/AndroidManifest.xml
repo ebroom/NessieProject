@@ -18,9 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".CustomerActivity" />
-        <activity android:name=".AddCustomerActivity" />
-        <activity android:name=".AtmActivity" />
+        <activity android:name=".CustomerAccount.CustomerActivity" />
+        <activity android:name=".AddCustomer.AddCustomerActivity" />
+        <activity android:name=".Atm.AtmActivity" />
+        <activity android:name=".PizzaActivity" />
     </application>
 
 </manifest>

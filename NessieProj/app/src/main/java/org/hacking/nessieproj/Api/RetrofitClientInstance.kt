@@ -1,4 +1,4 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.Api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

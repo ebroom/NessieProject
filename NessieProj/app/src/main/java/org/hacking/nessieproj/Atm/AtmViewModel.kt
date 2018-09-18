@@ -1,7 +1,9 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.Atm
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import org.hacking.nessieproj.Api.GetDataService
+import org.hacking.nessieproj.Api.RetrofitClientInstance
 import org.hacking.nessieproj.models.Atm
 import org.hacking.nessieproj.models.AtmList
 import org.hacking.nessieproj.models.Paging

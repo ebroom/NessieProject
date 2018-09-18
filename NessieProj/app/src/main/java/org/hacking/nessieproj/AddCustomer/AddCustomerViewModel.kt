@@ -1,7 +1,9 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.AddCustomer
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import org.hacking.nessieproj.Api.GetDataService
+import org.hacking.nessieproj.Api.RetrofitClientInstance
 import org.hacking.nessieproj.models.APIResponse
 import org.hacking.nessieproj.models.Customer
 import retrofit2.Call

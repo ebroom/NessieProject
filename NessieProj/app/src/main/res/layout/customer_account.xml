@@ -20,30 +20,48 @@
                 android:text="@{customerAccount.accountId}"
                 android:visibility="gone"/>
         <TextView
+                android:id="@+id/nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@{customerAccount.nickname}"
+                android:textSize="24dp"/>
+        <TextView
                 android:id="@+id/type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{customerAccount.type}"/>
         <TextView
-                android:id="@+id/nickname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{customerAccount.nickname}"/>
-        <TextView
                 android:id="@+id/rewards"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{customerAccount.rewards}"/>
+                android:text="@{String.format(@string/rewards_format, customerAccount.rewards)}"/>
         <TextView
                 android:id="@+id/balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{customerAccount.balance}"/>
+                android:text="@{String.format(@string/balance_format, customerAccount.balance)}"/>
         <TextView
                 android:id="@+id/accountNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{customerAccount.accountNumber}"/>
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <EditText
+                    android:id="@+id/deposit_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Amount to Deposit"
+                    android:inputType="numberDecimal"/>
+            <Button
+                    android:id="@+id/deposit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/deposit_amount"
+                    android:text="Deposit"/>
+        </RelativeLayout>
         <Button
                 android:id="@+id/pizza"
                 android:layout_width="wrap_content"

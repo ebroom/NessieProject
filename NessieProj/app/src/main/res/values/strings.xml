@@ -11,4 +11,6 @@
     <string name="atm_address_format_street">%1$s %2$s</string>
     <string name="atm_address_format_city">%1$s, %2$s %3$s</string>
     <string name="atm_money">$%1$s</string>
+    <string name="rewards_format">Rewards: %1$s</string>
+    <string name="balance_format">Balance: $%1$s</string>
 </resources>

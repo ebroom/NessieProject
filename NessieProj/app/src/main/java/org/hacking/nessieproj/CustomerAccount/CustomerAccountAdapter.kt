@@ -1,4 +1,4 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.CustomerAccount
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,8 +6,10 @@ import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import org.hacking.nessieproj.R
 import org.hacking.nessieproj.databinding.CustomerAccountBinding
 import org.hacking.nessieproj.models.CustomerAccount
+import org.hacking.nessieproj.models.Deposit
 import org.hacking.nessieproj.models.Purchase
 
 @SuppressLint("IncorrectAdapter")
@@ -19,6 +21,15 @@ class CustomerAccountAdapter(private val context: Context, private val dataList:
         init {
             binding.pizza.setOnClickListener {
                 viewmodel.orderPizza(binding.accountId.text.toString(), Purchase())
+            }
+            binding.deposit.setOnClickListener {
+                binding.depositAmount.text?.toString()?.toDouble()?.let {value ->
+                    if (value > 0) {
+                        val deposit = Deposit()
+                        deposit.amount = value
+                        viewmodel.deposit(binding.accountId.text.toString(), deposit)
+                    }
+                }
             }
         }
     }

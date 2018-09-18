@@ -1,4 +1,4 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.Atm
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_atm.*
+import org.hacking.nessieproj.DividerLineComponent
+import org.hacking.nessieproj.R
 
 class AtmActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.AddCustomer
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_add_customer.*
+import org.hacking.nessieproj.R
 import org.hacking.nessieproj.databinding.ActivityAddCustomerBinding
 import org.hacking.nessieproj.models.Customer
 

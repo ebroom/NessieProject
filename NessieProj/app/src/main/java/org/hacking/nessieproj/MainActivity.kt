@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.hacking.nessieproj.AddCustomer.AddCustomerActivity
+import org.hacking.nessieproj.Atm.AtmActivity
+import org.hacking.nessieproj.CustomerAccount.CustomerActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         }
         atms.setOnClickListener {
             startActivity(Intent(this, AtmActivity::class.java))
+        }
+        all_the_pizza.setOnClickListener {
+            startActivity(Intent(this, PizzaActivity::class.java))
         }
     }
 }

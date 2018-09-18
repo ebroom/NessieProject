@@ -1,4 +1,4 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.Api
 
 import org.hacking.nessieproj.models.*
 import retrofit2.Call
@@ -42,4 +42,12 @@ interface GetDataService {
     fun orderPizza(@Path("id") accountId: String,
                    @Query("key") key: String,
                    @Body purchase: Purchase): Call<APIResponse>
+
+    @POST("/accounts/{id}/deposits")
+    fun deposit(@Path("id") accountId: String,
+                @Query("key") key: String,
+                @Body deposit: Deposit): Call<APIResponse>
+
+    @GET("/enterprise/merchants")
+    fun getEnterpriseMerchants(@Query("key") key: String): Call<EnterpriseMerchantList>
 }
