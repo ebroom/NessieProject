@@ -24,7 +24,7 @@ class ObservableAccount : BaseObservable() {
         }
 
     @SerializedName("rewards")
-    var rewards: Int = 0
+    var rewards: Int? = null
         @Bindable get
         set(value) {
             field = value
@@ -32,7 +32,7 @@ class ObservableAccount : BaseObservable() {
         }
 
     @SerializedName("balance")
-    var balance: Int = 0
+    var balance: Int? = null
         @Bindable get
         set(value) {
             field = value

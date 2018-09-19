@@ -1,4 +1,4 @@
-package org.hacking.nessieproj.Atm
+package org.hacking.nessieproj.atm
 
 import android.annotation.SuppressLint
 import android.content.Context

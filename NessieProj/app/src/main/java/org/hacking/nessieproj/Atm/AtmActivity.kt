@@ -1,4 +1,4 @@
-package org.hacking.nessieproj.Atm
+package org.hacking.nessieproj.atm
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders

@@ -6,12 +6,6 @@
               android:gravity="center_horizontal"
               android:orientation="vertical">
     <Button
-            android:id="@+id/addCustomer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Add a Customer"/>
-    <Button
             android:id="@+id/customerInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

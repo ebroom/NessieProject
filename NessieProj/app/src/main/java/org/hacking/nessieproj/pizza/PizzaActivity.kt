@@ -1,4 +1,4 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.pizza
 
 import android.app.ProgressDialog
 import android.arch.lifecycle.Observer
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_pizza.*
+import org.hacking.nessieproj.R
 
 class PizzaActivity : AppCompatActivity() {
 

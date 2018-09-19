@@ -1,4 +1,4 @@
-package org.hacking.nessieproj.CustomerAccount
+package org.hacking.nessieproj.customerAccount
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import kotlinx.android.synthetic.main.accounts_recycler_view.*
 import org.hacking.nessieproj.R
 import org.hacking.nessieproj.models.CustomerAccount
@@ -27,7 +26,7 @@ class AllAccountsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater!!.inflate(R.layout.accounts_recycler_view, container, false)
-        viewmodel = ViewModelProviders.of(this).get(CustomerViewModel::class.java)
+        viewmodel = ViewModelProviders.of(activity).get(CustomerViewModel::class.java)
         noAccountsTextView = TextView(activity)
         viewGroup = container
         return view
@@ -40,7 +39,7 @@ class AllAccountsFragment : Fragment() {
 
     private fun setObservers() {
         viewmodel.customerAccounts.observe(this, Observer {
-            if (it!!.isEmpty()) {
+            if (it == null || it.isEmpty()) {
                 noAccountsTextView.text = "No Accounts Found"
                 if (accounts_layout.indexOfChild(noAccountsTextView) == -1) {
                     noAccountsTextView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
@@ -52,16 +51,6 @@ class AllAccountsFragment : Fragment() {
                 }
                 generateDataList(it)
             }
-        })
-        viewmodel.apiResponse.observe(this, Observer {
-            var message = ""
-            when(it!!) {
-                -1 -> message = "Something went wrong...Please try later!"
-                2 -> message = "Request was successful!"
-                4 -> message = "Invalid request"
-                5 -> message = "Server error...Please try later!"
-            }
-            Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
         })
         viewmodel.wasDeposited.observe(this, Observer {
             viewmodel.getCustomerAccounts()

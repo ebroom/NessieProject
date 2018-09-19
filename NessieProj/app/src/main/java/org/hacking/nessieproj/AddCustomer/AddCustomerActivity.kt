@@ -1,4 +1,4 @@
-package org.hacking.nessieproj.AddCustomer
+package org.hacking.nessieproj.addCustomer
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders

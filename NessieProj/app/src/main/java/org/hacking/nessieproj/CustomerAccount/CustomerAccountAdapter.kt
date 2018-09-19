@@ -1,4 +1,4 @@
-package org.hacking.nessieproj.CustomerAccount
+package org.hacking.nessieproj.customerAccount
 
 import android.annotation.SuppressLint
 import android.content.Context

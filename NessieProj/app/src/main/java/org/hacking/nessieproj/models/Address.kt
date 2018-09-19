@@ -8,7 +8,7 @@ import org.hacking.nessieproj.BR
 class Address : BaseObservable() {
 
     @SerializedName("street_number")
-    var streetNumber = "Unknown Street Address"
+    var streetNumber = ""
         @Bindable get
         set(value) {
             field = value

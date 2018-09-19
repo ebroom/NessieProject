@@ -2,12 +2,15 @@ package org.hacking.nessieproj.models
 
 import com.google.gson.annotations.SerializedName
 
-data class APIResponse(private val _code: Int, private val _message: String) {
+class APIResponse<T> {
 
     @SerializedName("code")
-    val code: Int = _code
+    val code: Int? = null
 
     @SerializedName("message")
-    val account: String = _message
+    val message: String? = null
+
+    @SerializedName("objectCreated")
+    val objectCreated: T? = null
 
 }

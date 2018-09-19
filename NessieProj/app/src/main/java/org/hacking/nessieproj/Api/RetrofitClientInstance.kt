@@ -1,4 +1,4 @@
-package org.hacking.nessieproj.Api
+package org.hacking.nessieproj.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,7 +11,6 @@ object RetrofitClientInstance {
     private var retrofit: Retrofit? = null
     private val BASE_URL = "http://api.reimaginebanking.com"
     const val API_KEY = "d2219a5dc7a6db803ffdaac7f69ba548"
-    const val CUSTOMER_ID = "5b90212ef0cec56abfa43894"
 
     val logging = HttpLoggingInterceptor()
     val httpClient = OkHttpClient.Builder()

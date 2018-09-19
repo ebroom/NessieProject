@@ -8,7 +8,7 @@ import org.hacking.nessieproj.BR
 class Customer : BaseObservable() {
 
     @SerializedName("first_name")
-    var firstName = "First"
+    var firstName: String? = null
         @Bindable get
         set(value) {
             field = value
@@ -16,7 +16,7 @@ class Customer : BaseObservable() {
         }
 
     @SerializedName("last_name")
-    var lastName = "Last"
+    var lastName: String? = null
         @Bindable get
         set(value) {
             field = value
@@ -30,4 +30,7 @@ class Customer : BaseObservable() {
             field = value
             notifyPropertyChanged(BR.address)
         }
+
+    @SerializedName("_id")
+    var customerId = ""
 }

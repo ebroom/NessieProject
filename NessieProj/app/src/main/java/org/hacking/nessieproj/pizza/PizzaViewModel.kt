@@ -1,11 +1,9 @@
-package org.hacking.nessieproj
+package org.hacking.nessieproj.pizza
 
-import android.annotation.SuppressLint
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.util.Log
-import org.hacking.nessieproj.Api.GetDataService
-import org.hacking.nessieproj.Api.RetrofitClientInstance
+import org.hacking.nessieproj.api.GetDataService
+import org.hacking.nessieproj.api.RetrofitClientInstance
 import org.hacking.nessieproj.models.EnterpriseMerchantList
 import org.hacking.nessieproj.models.Merchant
 import retrofit2.Call
@@ -33,7 +31,6 @@ class PizzaViewModel : ViewModel() {
 
             override fun onFailure(call: Call<EnterpriseMerchantList>, t: Throwable) {
                 loadingIndicator.value =false
-                Log.d("ehbroom", t.message)
             }
         })
     }
