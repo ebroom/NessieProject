@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/atm_layout"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
@@ -25,6 +26,7 @@
             android:id="@+id/get_atms_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/NessieButton"
             android:text="Get Nearby ATMs"/>
     <android.support.v7.widget.RecyclerView
             android:id="@+id/atm_recycler_view"

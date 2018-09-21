@@ -17,10 +17,11 @@ import org.hacking.nessieproj.databinding.CustomerBillBinding
 
 class CustomerAccountButtonsFragment : Fragment() {
 
-    private lateinit var viewmodel : CustomerViewModel
-    private lateinit var progressDialog : ProgressDialog
-    private lateinit var noAccountsTextView : TextView
-    private var viewGroup : ViewGroup? = null
+    private lateinit var viewmodel: CustomerViewModel
+    private lateinit var progressDialog: ProgressDialog
+    private lateinit var noAccountsTextView: TextView
+    private var viewGroup: ViewGroup? = null
+    private var billView: View? = null
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -58,7 +59,7 @@ class CustomerAccountButtonsFragment : Fragment() {
             transaction.commit()
         }
 
-        deleteAccounts.setOnClickListener{
+        deleteAccounts.setOnClickListener {
             startProgressDialog()
             viewmodel.deleteCustomerAccounts()
         }
@@ -71,11 +72,18 @@ class CustomerAccountButtonsFragment : Fragment() {
     private fun setObservers() {
         viewmodel.customerBills.observe(this, Observer {
             it?.let {
+                if (customer_account_layout.indexOfChild(noAccountsTextView) != -1) {
+                    customer_account_layout.removeView(noAccountsTextView)
+                }
+                billView?.let {
+                    customer_account_layout.removeView(billView)
+                }
                 val layoutInflater = LayoutInflater.from(context)
-                val binding : CustomerBillBinding = DataBindingUtil.inflate(layoutInflater, R.layout.customer_bill, viewGroup, false)
+                val binding: CustomerBillBinding = DataBindingUtil.inflate(layoutInflater, R.layout.customer_bill, viewGroup, false)
                 binding.bill = viewmodel.customerBills.value
-                val billView = binding.root
+                billView = binding.root
                 customer_account_layout.addView(billView)
+
             } ?: run {
                 noAccountsTextView.text = "No Bills Found"
                 if (customer_account_layout.indexOfChild(noAccountsTextView) == -1) {

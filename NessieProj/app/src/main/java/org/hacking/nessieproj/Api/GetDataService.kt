@@ -32,7 +32,7 @@ interface GetDataService {
     fun getAtms(@Query("lat") lat: Double,
                 @Query("lng") lng: Double,
                 @Query("rad") radius: Int = 1,
-                @Query("page") page: Int = 0,
+                @Query("page") page: Int = 1,
                 @Query("key") key: String): Call<AtmList>
 
     @GET

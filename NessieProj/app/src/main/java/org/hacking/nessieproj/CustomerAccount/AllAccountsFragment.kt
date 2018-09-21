@@ -11,13 +11,14 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import kotlinx.android.synthetic.main.accounts_recycler_view.*
+import org.hacking.nessieproj.DividerLineComponent
 import org.hacking.nessieproj.R
 import org.hacking.nessieproj.models.CustomerAccount
 
 class AllAccountsFragment : Fragment() {
-    private lateinit var viewmodel : CustomerViewModel
-    private var viewGroup : ViewGroup? = null
-    private lateinit var noAccountsTextView : TextView
+    private lateinit var viewmodel: CustomerViewModel
+    private var viewGroup: ViewGroup? = null
+    private lateinit var noAccountsTextView: TextView
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -63,5 +64,6 @@ class AllAccountsFragment : Fragment() {
         val layoutManager = LinearLayoutManager(activity)
         recycler_view.layoutManager = layoutManager
         recycler_view.adapter = adapter
+        recycler_view.addItemDecoration(DividerLineComponent(activity))
     }
 }

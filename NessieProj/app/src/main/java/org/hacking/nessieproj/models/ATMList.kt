@@ -2,7 +2,7 @@ package org.hacking.nessieproj.models
 
 import com.google.gson.annotations.SerializedName
 
-class AtmList() {
+class AtmList {
 
     @SerializedName("data")
     val data : List<Atm>? = null

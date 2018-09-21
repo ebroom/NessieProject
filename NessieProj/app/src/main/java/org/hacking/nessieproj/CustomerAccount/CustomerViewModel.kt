@@ -70,7 +70,7 @@ class CustomerViewModel : ViewModel() {
                 if (response.body()!!.isEmpty()) {
                     customerBills.value = null
                 } else {
-                    customerBills.value = response.body()!![0]
+                    customerBills.value = response.body()!!.last()
                 }
                 loadingIndicator.value = false
             }

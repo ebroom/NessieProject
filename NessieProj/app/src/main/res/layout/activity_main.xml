@@ -9,18 +9,18 @@
             android:id="@+id/customerInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            style="@style/NessieButton"
             android:text="Customer Account"/>
     <Button
             android:id="@+id/atms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            style="@style/NessieButton"
             android:text="ATMs"/>
     <Button
             android:id="@+id/all_the_pizza"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Find Pizza Merchants"/>
+            style="@style/NessieButton"
+            android:text="Find Pizza"/>
 </LinearLayout>

@@ -4,16 +4,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:paddingStart="8dp"
+        android:orientation="vertical"
         android:paddingEnd="8dp"
-        android:orientation="vertical">
+        android:paddingStart="8dp">
     <TextView
+            style="@style/Header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:gravity="center_horizontal"
             android:text="Pizza Places"
-            android:textSize="28sp"/>
+    />
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/pizza_recycler_view"

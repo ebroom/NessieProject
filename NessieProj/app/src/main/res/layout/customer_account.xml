@@ -6,67 +6,89 @@
         <variable
                 name="customerAccount"
                 type="org.hacking.nessieproj.models.CustomerAccount"/>
+        <import type="org.hacking.nessieproj.FormatUtil"/>
     </data>
-
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="16dp">
-        <TextView
-                android:id="@+id/account_id"
-                android:layout_width="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
+        <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{customerAccount.accountId}"
-                android:visibility="gone"/>
-        <TextView
-                android:id="@+id/nickname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@{customerAccount.nickname}"
-                android:textSize="24dp"/>
-        <TextView
-                android:id="@+id/type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{customerAccount.type}"/>
-        <TextView
-                android:id="@+id/rewards"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{String.format(@string/rewards_format, customerAccount.rewards)}"/>
-        <TextView
-                android:id="@+id/balance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{String.format(@string/balance_format, customerAccount.balance)}"/>
-        <TextView
-                android:id="@+id/accountNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{customerAccount.accountNumber}"/>
-        <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            <EditText
-                    android:id="@+id/deposit_amount"
+                android:adjustViewBounds="true"
+                android:background="@drawable/capital_one_logo"
+                android:orientation="vertical"
+                android:scaleType="fitXY">
+            <TextView
+                    android:id="@+id/account_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Amount to Deposit"
-                    android:inputType="numberDecimal"/>
-            <Button
-                    android:id="@+id/deposit"
+                    android:text="@{customerAccount.accountId}"
+                    android:visibility="gone"/>
+            <TextView
+                    android:id="@+id/nickname"
+                    style="@style/Header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/deposit_amount"
-                    android:text="Deposit"/>
-        </RelativeLayout>
+                    android:text="@{FormatUtil.formatAccountName(@string/account_format, customerAccount.nickname, customerAccount.accountNumber)}"/>
+            <!--<TextView-->
+            <!--android:id="@+id/type"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@{customerAccount.type}"/>-->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                        android:id="@+id/balance"
+                        style="@style/Header2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="@{String.format(@string/balance_format, customerAccount.balance)}"/>
+                <TextView
+                        android:id="@+id/rewards"
+                        style="@style/Header2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="@{String.format(@string/rewards_format, customerAccount.rewards)}"/>
+
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <EditText
+                        android:id="@+id/deposit_amount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="2"
+                        android:hint="Amount to Deposit"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"/>
+                <Button
+                        android:id="@+id/deposit"
+                        style="@style/NessieButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:minHeight="40dp"
+                        android:text="Deposit"/>
+            </LinearLayout>
+        </LinearLayout>
         <Button
                 android:id="@+id/pizza"
-                android:layout_width="wrap_content"
+                style="@style/NessieButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Order pizza from this account!"/>
-
     </LinearLayout>
 </layout>

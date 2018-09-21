@@ -32,5 +32,5 @@ class Customer : BaseObservable() {
         }
 
     @SerializedName("_id")
-    var customerId = ""
+    var customerId: String? = null
 }

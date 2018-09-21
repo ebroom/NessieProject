@@ -3,46 +3,54 @@
     <data>
         <variable name="atm" type="org.hacking.nessieproj.models.Atm"/>
     </data>
-    <LinearLayout
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:paddingBottom="8dp"
             android:paddingTop="8dp">
-
-        <TextView
-                android:id="@+id/name"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
+        <ImageView
+                android:id="@+id/dollar_image"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/dolla_sign"/>
+        <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{atm.name}"/>
-        <!--<TextView-->
-        <!--android:id="@+id/latitude"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@{String.valueOf(safeUnbox(atm.geocode.lat))}"/>-->
-        <!--<TextView-->
-        <!--android:id="@+id/longitude"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@{String.valueOf(safeUnbox(atm.geocode.lon))}"/>-->
-        <TextView
-                android:id="@+id/address_street"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{String.format(@string/atm_address_format_street, atm.address.streetNumber, atm.address.streetName)}"/>
-        <TextView
-                android:id="@+id/address_city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{String.format(@string/atm_address_format_city, atm.address.city, atm.address.state, atm.address.zip)}"/>
-        <TextView
-                android:id="@+id/amount_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{String.format(@string/atm_money, String.valueOf(safeUnbox(atm.amountLeft)))}"/>
-
-
-    </LinearLayout>
+                android:layout_toEndOf="@id/dollar_image"
+                android:orientation="vertical">
+            <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{atm.name}"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+            <!--<TextView-->
+            <!--android:id="@+id/latitude"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@{String.valueOf(safeUnbox(atm.geocode.lat))}"/>-->
+            <!--<TextView-->
+            <!--android:id="@+id/longitude"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@{String.valueOf(safeUnbox(atm.geocode.lon))}"/>-->
+            <TextView
+                    android:id="@+id/address_street"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/atm_address_format_street, atm.address.streetNumber, atm.address.streetName)}"/>
+            <TextView
+                    android:id="@+id/address_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/atm_address_format_city, atm.address.city, atm.address.state, atm.address.zip)}"/>
+            <TextView
+                    android:id="@+id/amount_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/atm_money, String.valueOf(safeUnbox(atm.amountLeft)))}"/>
+        </LinearLayout>
+    </RelativeLayout>
 </layout>

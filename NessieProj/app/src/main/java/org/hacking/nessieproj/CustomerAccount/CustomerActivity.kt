@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import org.hacking.nessieproj.MessageText
 import org.hacking.nessieproj.R
 
 class CustomerActivity : AppCompatActivity() {
@@ -29,14 +30,7 @@ class CustomerActivity : AppCompatActivity() {
 
     private fun setObserver() {
         viewmodel.apiResponse.observe(this, Observer {
-            var message = ""
-            when(it!!) {
-                -1 -> message = "Something went wrong...Please try later!"
-                2 -> message = "Request was successful!"
-                4 -> message = "Invalid request"
-                5 -> message = "Server error...Please try later!"
-            }
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, MessageText.getMessageFromApiCode(it), Toast.LENGTH_SHORT).show()
         })
     }
 }

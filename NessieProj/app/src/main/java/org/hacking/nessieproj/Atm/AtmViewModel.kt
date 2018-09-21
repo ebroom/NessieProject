@@ -19,7 +19,7 @@ class AtmViewModel : ViewModel() {
     val paging = MutableLiveData<Paging>()
     val isLoading = MutableLiveData<Boolean>().apply { postValue(false) }
 
-    fun getAtms(lat: Double, lng: Double, radius: Int, page: Int = 0) {
+    fun getAtms(lat: Double, lng: Double, radius: Int, page: Int = 1) {
         isLoading.value = true
         atmArrayList.clear()
         val call = service.getAtms(lat, lng, radius, page, RetrofitClientInstance.API_KEY)

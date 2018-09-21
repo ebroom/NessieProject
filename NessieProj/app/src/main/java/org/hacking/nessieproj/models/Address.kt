@@ -7,7 +7,7 @@ import org.hacking.nessieproj.BR
 
 class Address : BaseObservable() {
 
-    @SerializedName("street_number")
+    @SerializedName("street_number", alternate = ["street number"])
     var streetNumber = ""
         @Bindable get
         set(value) {
@@ -15,7 +15,7 @@ class Address : BaseObservable() {
             notifyPropertyChanged(BR.streetNumber)
         }
 
-    @SerializedName("street_name")
+    @SerializedName("street_name", alternate = ["street name"])
     var streetName = ""
         @Bindable get
         set(value) {

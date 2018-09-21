@@ -3,39 +3,41 @@
     <data>
         <variable name="pizza" type="org.hacking.nessieproj.models.Merchant"/>
     </data>
-    <LinearLayout
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp">
-        <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:id="@+id/pizza_image"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/pizza"/>
+        <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="@{pizza.name}"/>
-        <!--<TextView-->
-        <!--android:id="@+id/latitude"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@{String.valueOf(safeUnbox(atm.geocode.lat))}"/>-->
-        <!--<TextView-->
-        <!--android:id="@+id/longitude"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@{String.valueOf(safeUnbox(atm.geocode.lon))}"/>-->
-        <TextView
-                android:id="@+id/address_street"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{String.format(@string/atm_address_format_street, pizza.address.streetNumber, pizza.address.streetName)}"/>
-        <TextView
-                android:id="@+id/address_city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{String.format(@string/atm_address_format_city, pizza.address.city, pizza.address.state, pizza.address.zip)}"/>
+                android:layout_toEndOf="@id/pizza_image"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="8dp">
+            <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{pizza.name}"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+            <TextView
+                    android:id="@+id/address_street"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/atm_address_format_street, pizza.address.streetNumber, pizza.address.streetName)}"/>
+            <TextView
+                    android:id="@+id/address_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.format(@string/atm_address_format_city, pizza.address.city, pizza.address.state, pizza.address.zip)}"/>
 
-    </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
 </layout>
