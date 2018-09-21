@@ -50,6 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Street Number"
+                    android:inputType="number"
                     android:text="@={customer.address.streetNumber}"/>
             <EditText
                     android:id="@+id/customer_street_name"
@@ -84,6 +85,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Zip Code"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
                     android:text="@={customer.address.zip}"/>
         </LinearLayout>
         <Button

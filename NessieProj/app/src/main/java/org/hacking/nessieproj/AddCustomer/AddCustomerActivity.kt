@@ -46,8 +46,8 @@ class AddCustomerActivity : AppCompatActivity() {
             it?.let { customer ->
                 val intent = Intent(this, CustomerActivity::class.java)
                 intent.putExtra("customerId", customer.customerId)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
+                this.finish()
             }
         })
     }
