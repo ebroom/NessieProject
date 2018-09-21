@@ -20,7 +20,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add a Credit Card"
+                android:text="@string/add_a_credit_card"
                 style="@style/Header"/>
         <LinearLayout
                 android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:text="Account Nickname: "/>
+                    android:text="@string/account_nickname"/>
             <EditText
                     android:id="@+id/edit_nickname"
                     android:layout_width="0dp"
@@ -46,7 +46,7 @@
                     android:layout_weight="1"
                     android:gravity="end"
                     android:layout_height="wrap_content"
-                    android:text="Rewards: "/>
+                    android:text="@string/rewards"/>
             <EditText
                     android:id="@+id/edit_rewards"
                     android:layout_width="0dp"
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:text="Balance: "/>
+                    android:text="@string/balance"/>
             <EditText
                     android:id="@+id/edit_balance"
                     android:layout_width="0dp"
@@ -80,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:text="Account Number: "/>
+                    android:text="@string/account_number"/>
             <EditText
                     android:id="@+id/edit_accountNumber"
                     android:layout_width="0dp"
@@ -97,7 +97,7 @@
                 style="@style/NessieButton"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Add Account"/>
+                android:text="@string/add_account"/>
 
     </LinearLayout>
 </layout>

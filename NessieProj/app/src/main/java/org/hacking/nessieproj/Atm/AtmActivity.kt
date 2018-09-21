@@ -41,7 +41,7 @@ class AtmActivity : AppCompatActivity() {
 
     private fun setListeners() {
         get_atms_btn.setOnClickListener {
-            if (lat.text.toString().isEmpty() || lng.text.toString().isEmpty()) {
+            if (lat.text.toString().isEmpty() || lng.text.toString().isEmpty() || radius.text.toString().isEmpty()) {
                 if (atm_layout.indexOfChild(invalidInputTextView) == -1) {
                     invalidInputTextView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                             LinearLayout.LayoutParams.WRAP_CONTENT)

@@ -8,19 +8,19 @@
             android:id="@+id/lat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Latitude"
+            android:hint="@string/latitude"
             android:inputType="numberDecimal|numberSigned"/>
     <EditText
             android:id="@+id/lng"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Longitude"
+            android:hint="@string/longitude"
             android:inputType="numberDecimal|numberSigned"/>
     <EditText
             android:id="@+id/radius"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Radius"
+            android:hint="@string/radius"
             android:imeOptions="actionDone"
             android:inputType="number"/>
     <Button
@@ -28,7 +28,7 @@
             style="@style/NessieButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Get Nearby ATMs"/>
+            android:text="@string/get_nearby_atms"/>
     <android.support.v7.widget.RecyclerView
             android:id="@+id/atm_recycler_view"
             android:layout_width="match_parent"

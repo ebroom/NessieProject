@@ -12,27 +12,27 @@
             style="@style/NessieButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Get Account Info"
+            android:text="@string/get_account_info"
     />
     <Button
             android:id="@+id/postAccounts"
             style="@style/NessieButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Account"
+            android:text="@string/add_account"
     />
     <Button
             android:id="@+id/deleteAccounts"
             style="@style/NessieButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Delete All Accounts"
+            android:text="@string/delete_all_accounts"
     />
     <Button
             android:id="@+id/getBills"
             style="@style/NessieButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="View Upcoming Bill"/>
+            android:text="@string/view_upcoming_bill"/>
 
 </LinearLayout>

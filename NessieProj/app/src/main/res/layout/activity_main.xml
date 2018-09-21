@@ -10,17 +10,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/NessieButton"
-            android:text="Customer Account"/>
+            android:text="@string/customer_account"/>
     <Button
             android:id="@+id/atms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/NessieButton"
-            android:text="ATMs"/>
+            android:text="@string/atms"/>
     <Button
             android:id="@+id/all_the_pizza"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/NessieButton"
-            android:text="Find Pizza"/>
+            android:text="@string/find_pizza"/>
 </LinearLayout>

@@ -18,7 +18,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Add a Customer"/>
+                android:text="@string/add_a_customer"/>
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,14 +29,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="First Name"
+                    android:hint="@string/first_name"
                     android:text="@={customer.firstName}"/>
             <EditText
                     android:id="@+id/customer_last_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Last Name"
+                    android:hint="@string/last_name"
                     android:text="@={customer.lastName}"/>
         </LinearLayout>
         <LinearLayout
@@ -49,7 +49,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Street Number"
+                    android:hint="@string/street_number"
                     android:inputType="number"
                     android:text="@={customer.address.streetNumber}"/>
             <EditText
@@ -57,7 +57,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:hint="Street Name"
+                    android:hint="@string/street_name"
                     android:text="@={customer.address.streetName}"/>
         </LinearLayout>
         <LinearLayout
@@ -70,21 +70,21 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:hint="City"
+                    android:hint="@string/city"
                     android:text="@={customer.address.city}"/>
             <EditText
                     android:id="@+id/customer_state"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="State"
+                    android:hint="@string/state"
                     android:text="@={customer.address.state}"/>
             <EditText
                     android:id="@+id/customer_zip"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Zip Code"
+                    android:hint="@string/zip_code"
                     android:imeOptions="actionDone"
                     android:inputType="number"
                     android:text="@={customer.address.zip}"/>
@@ -94,6 +94,6 @@
                 style="@style/NessieButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add Customer"/>
+                android:text="@string/add_customer"/>
     </LinearLayout>
 </layout>

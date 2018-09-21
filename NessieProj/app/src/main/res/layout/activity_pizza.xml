@@ -11,7 +11,7 @@
             style="@style/Header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pizza Places"
+            android:text="@string/pizza_places"
     />
 
     <android.support.v7.widget.RecyclerView
