@@ -43,4 +43,5 @@
     <string name="rewards">Rewards:</string>
     <string name="account_nickname">Account Nickname:</string>
     <string name="add_a_credit_card">Add a Credit Card</string>
+    <string name="atm_invalid_input">Please input your latitude, longitude, and radius</string>
 </resources>

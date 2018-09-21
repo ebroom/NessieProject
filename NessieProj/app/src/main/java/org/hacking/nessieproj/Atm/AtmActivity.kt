@@ -32,7 +32,7 @@ class AtmActivity : AppCompatActivity() {
 
     private fun setupInvalidTextView() {
         invalidInputTextView = TextView(this)
-        invalidInputTextView.text = "Please input your latitude and longitude"
+        invalidInputTextView.text = getString(R.string.atm_invalid_input)
         invalidInputTextView.setPadding(8, 8, 8, 8)
         invalidInputTextView.textSize = 18.0f
         invalidInputTextView.setTextColor(Color.RED)
